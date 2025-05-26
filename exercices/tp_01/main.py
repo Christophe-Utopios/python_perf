@@ -42,7 +42,7 @@ class Domaine(Service):
 clients = {}  # {client_id: [liste_commandes]}
 file_commandes = deque()
 
-# 3. Traitement des commandes avec args et kwargs
+# 3. Traitement des commandes avec *args et **kwargs
 def passer_commande(client_id, *services, **options):
     if client_id not in clients:
         clients[client_id] = []
@@ -67,7 +67,7 @@ def traiter_commandes():
     while file_commandes:
         client_id, commande = file_commandes.popleft()
         services = commande["services"]
-        total = sum(map(lambda s: s.calculer_prix(), services))
+        total = sum(map(lambda service: service.calculer_prix(), services))
         total_apres_remise = total - commande["remise"]
         if commande["urgent"]:
             total_apres_remise *= 1.2
@@ -95,3 +95,5 @@ for client_id, factures in clients.items():
         print(f"  Services: {facture['services']}")
         print(f"  Total: {facture['total']}€")
         print()
+
+print(historique_commandes)
