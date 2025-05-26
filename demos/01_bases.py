@@ -149,6 +149,12 @@ class Vehicule(ABC):
         pass
 
 class Electrique:
+    def __enter__(self):
+        pass
+
+    def __exit__(self):
+        pass
+    
     def charger_batterie(self):
         print("Batterie en charge")
 
