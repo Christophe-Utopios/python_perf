@@ -19,7 +19,7 @@ def init():
         list_music = []
 
 
-fullpath = os.path.join(folderpath, filename)
+fullpath = os.path.join(folderpath, filename) # /exercices/datas/music.json
 
 
 def save():
