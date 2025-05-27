@@ -9,7 +9,7 @@
     </xsl:template>
 
     <xsl:template match="person">
-        <name username="{@username}" >
+        <name username="{@username}" lastname="{lastname}">
             <xsl:value-of select="name" />
         </name>
     </xsl:template>

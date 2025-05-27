@@ -11,5 +11,5 @@ transformer = etree.XSLT(style_doc)
 
 result = transformer(source_doc)
 
-with open("./demos/09_xsl/new_result.xml", "w") as file:
+with open("./demos/09_xsl/new_result.xml", "w", encoding="UTF-8") as file:
     file.write(str(result))
